@@ -18,9 +18,9 @@ function App() {
       <BrowserRouter>
       <Header></Header>
       <Switch>
-        <PrivateRoute exact path="/">
+        <Route exact path="/">
         <Home></Home>
-        </PrivateRoute>
+        </Route>
         <Route path="/home">
         <Home></Home>
         </Route>

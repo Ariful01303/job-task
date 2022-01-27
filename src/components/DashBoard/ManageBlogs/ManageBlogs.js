@@ -8,7 +8,7 @@ const ManageBlogs = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/service')
+        fetch(' https://whispering-sierra-10389.herokuapp.com/service')
         .then(res=>res.json())
         .then(data=>setServices(data)) 
         
@@ -16,7 +16,7 @@ const ManageBlogs = () => {
   const handleDelete= (id) => {
     const proceed=window.confirm("Are you sure, You want to Delete?")
       if(proceed){
-        fetch(`http://localhost:5000/services/${id}`, {
+        fetch(` https://whispering-sierra-10389.herokuapp.com/services/${id}`, {
           method: "DELETE",
         
         })

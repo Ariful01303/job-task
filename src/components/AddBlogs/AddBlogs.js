@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Typical from 'react-typical'
 
@@ -6,7 +5,7 @@ const AddBlogs = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data =>{
    
-      fetch("http://localhost:5000/services", {
+      fetch("https://whispering-sierra-10389.herokuapp.com/services", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(data),

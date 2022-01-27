@@ -15,7 +15,7 @@ const DashBoard = () => {
      const [isAdmin, setIsAdmin] = useState(false);
 
      useEffect(() => {
-       fetch(`http://localhost:5000/adminCheker/${user?.email}`)
+       fetch(` https://whispering-sierra-10389.herokuapp.com/adminCheker/${user?.email}`)
          .then((res) => res.json())
          .then((data) => {
            if (data[0]?.role === "admin") {
@@ -42,16 +42,16 @@ const DashBoard = () => {
                 <h5 className="dashboard-menu mt-5 text-primary">Admin Dashboard</h5>
 
                 <Link to={`${url}/manageblogs`} className="teast">
-                  <li className="dashboard-menu"><i class="fas fa-tasks fs-4"></i> Manage Blogs</li>
+                  <li className="dashboard-menu"><i class="fas fa-tasks fs-4 icon-color"></i> Manage Blogs</li>
                 </Link>
                
                
                <Link to={`${url}/makeAdmin`} className="teast">
-                  <li className="dashboard-menu"><i class="fas fa-users-cog fs-4"></i> Make Admin</li>
+                  <li className="dashboard-menu"><i class="fas fa-users-cog fs-4 icon-color"></i> Make Admin</li>
                 </Link>
                
                 <Link to={`${url}/addblog`} className="teast">
-                  <li className="dashboard-menu"><i class="fas fa-plus-circle fs-4"></i> Add A Blog</li>
+                  <li className="dashboard-menu"><i class="fas fa-plus-circle fs-4 icon-color"></i> Add A Blog</li>
                 </Link>
               </div>)}
               <Button className="mt-5" onClick={logOut} variant="danger"><i class="fs-3 fas fa-sign-out-alt"></i></Button>

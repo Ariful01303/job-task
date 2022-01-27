@@ -4,8 +4,8 @@ import Banner from '../Banner/Banner';
 import Blogs from '../Blogs/Blogs';
 import useAuth from '../Firebase/useFirebase/useAuth';
 import Typical from 'react-typical'
-
 import './Home.css'
+const url=(`https://3gwifi.net/wp-content/uploads/2018/05/khai-niem-travel.jpg`)
 
 const Home = () => {
     const {loading}=useAuth()
@@ -14,7 +14,7 @@ const Home = () => {
     const [pageCount, setPageCount] = useState(0);
     const size = 10;
     useEffect(()=>{
-        fetch(`http://localhost:5000/services?page=${page}&&size=${size}`)
+        fetch(` https://whispering-sierra-10389.herokuapp.com/services?page=${page}&&size=${size}`)
         .then(res=>res.json())
         .then(data=>
             {setServices(data.products);
@@ -74,6 +74,25 @@ const Home = () => {
                     </div>
    
   </div>
+  <div id="about">
+           <div>
+             <div className="mt-5 mb-5 container">
+            <h2 className="text-danger mt-5 mb-5" id="about">About us</h2>
+            <div className="d-flex justify-content-cente align-items-center row ">
+            <div className="col-lg-6 col-md-12 col-sm-12 col-12">
+              <p>Our Focus is on Boutique-Style Hotels and Unique Travel Experiences Worldwide. Contact Us. Join Our Membership Or Book A One Time Trip For Customized Itineraries. Book Your Trip! Customized Itineraries. Boutique Hotels. Hassle-Free Process. Destinations: Asia, Europe, Oceania, The Middle East, North America, Africa, South America.</p>
+             </div>
+
+             <div className="col-lg-6">
+               <img className="w-100 p-3" src={url}alt="" />
+            </div>
+            </div>
+            
+
+            </div>
+        </div>
+           </div> 
+
       </div>
         </div>
     );

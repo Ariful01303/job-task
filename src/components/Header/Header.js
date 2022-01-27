@@ -14,7 +14,7 @@ const Header = () => {
  const [isAdmin, setIsAdmin] = useState(false);
 
  useEffect(() => {
-   fetch(`http://localhost:5000/adminCheker/${user?.email}`)
+   fetch(` https://whispering-sierra-10389.herokuapp.com/adminCheker/${user?.email}`)
      .then((res) => res.json())
      .then((data) => {
        if (data[0]?.role === "admin") {

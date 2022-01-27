@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home';
@@ -8,6 +7,9 @@ import PrivateRoute from './components/PrivateRout/PrivateRoute';
 import Register from './components/Register/Register';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import DashBoard from './components/DashBoard/DashBoard';
+import BlogDetail from './components/BlogDetails/BlogDetail';
+import NoFound from './components/NoFound/NoFound';
 
 function App() {
   return (
@@ -28,6 +30,15 @@ function App() {
         <Route path="/register">
           <Register></Register>
         </Route>
+        <Route path='/detail/:idn'>
+          <BlogDetail></BlogDetail>
+        </Route>
+        <PrivateRoute path="/dashboard">
+            <DashBoard></DashBoard>
+          </PrivateRoute>
+          <Route path="/*">
+       <NoFound></NoFound>
+     </Route>
       </Switch>
       <Footer></Footer>
       </BrowserRouter>

@@ -1,11 +1,45 @@
+.extra-style:hover{
+    background:rgb(12, 12, 12);
+    color: #fff;
+    border-radius: 5px;
+    
+    box-shadow: 5px 7px 10px 5px rgba(68, 22, 22, 0.541);
+}
 .pagination{
     margin: 30px;
+    background:white;
+    color: #fff;
+    border-radius: 5px;
+    
+    box-shadow: 5px 7px 10px 5px rgba(68, 22, 22, 0.541);
 }
 .pagination button{
     padding: 0 10px;
     margin-right: 20px;
 }
 .pagination .selected{
-    background-color: rgb(43, 43, 224);
+    background-color: rgb(22, 22, 22);
     color: white;
+}
+.service-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+/* Make it responsive */
+@media only screen and (max-width:600px) {
+    .service-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media only screen and (min-width:600px) and (max-width: 1024px){
+    .service-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (min-width:1024px){
+    .service-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

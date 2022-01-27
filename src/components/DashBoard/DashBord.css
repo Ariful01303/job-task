@@ -1,0 +1,74 @@
+/* .dashboard {
+    background-color: rgba(93, 102, 228, 0.527);
+    height: 150vh;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+  } */
+  .dashboard-menu {
+    list-style: none;
+    margin-top: 10px;
+    color: red;
+    text-decoration: none;
+    
+  }
+  .dashboard-menu:hover {
+    color: rgb(36, 14, 238);
+  }
+  .dash-pic{
+      height: 75px;
+      width: 75px;
+      border-radius: 50%;
+  }
+  .teast{
+      text-decoration: none;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  .dashboard {
+    background-color: black;
+    height: 100vh;
+    text-align: center;
+    cursor: pointer;
+    padding: 20px;
+   
+  }
+  .dash-banner{
+    background-image: url('https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80');
+    height: 90vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: cover;
+    background-attachment: scroll;
+    background-blend-mode: overlay;
+    
+}
+  .dashboard-menu {
+    list-style: none;
+    margin-top: 10px;
+    
+    color: green;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+  
+    
+  }
+  .dashboard-menu:hover {
+    color: rgb(27, 123, 233);
+  }
+
+  .teast{
+      text-decoration: none;
+  }
+  

@@ -7,7 +7,7 @@ import useAuth from '../Firebase/useFirebase/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const {singInGoogle,user,logOut,handleUserLogin}=useAuth()
+    const {singInGoogle,user,logOut,handleUserLogin,hanldeUserInfoRegister}=useAuth()
    
     const location=useLocation();
     const history=useHistory();
@@ -38,7 +38,7 @@ const Login = () => {
       handleUserLogin(email, password)
       .then((result) => {
         history.push(redirectUrl)
-        // hanldeUserInfoRegister(result.user.email)
+        hanldeUserInfoRegister(result.user.email)
 
         setError('');
        })
@@ -51,7 +51,7 @@ const Login = () => {
         singInGoogle()
         .then(result=>{
            history.push(redirectUrl);
-          //  hanldeUserInfoRegister(result.user.email)
+           hanldeUserInfoRegister(result.user.email)
 
            setError('');
         })
@@ -83,8 +83,8 @@ const Login = () => {
                <div className="login-regiater-btn mt-4">
                <button 
                   onClick={handleLogin} 
-                  className="btn btn-primary me-1">
-                    Login</button>
+                  className="btn btn-primary m-auto">
+                    <i class="fs-2 fas fa-sign-in-alt"></i></button>
 
                  
                   

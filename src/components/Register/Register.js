@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import useAuth from '../Firebase/useFirebase/useAuth';
 
 const Register = () => {
-    const {singInGoogle,user,logOut, handleUserRegister}=useAuth()
+    const {singInGoogle,user,logOut, handleUserRegister, hanldeUserInfoRegister}=useAuth()
    
     const location=useLocation();
     const history=useHistory();
@@ -47,7 +47,7 @@ const Register = () => {
       .then((result) => {
         history.push(redirectUrl)
      
-
+        hanldeUserInfoRegister(result.user.email)
         setError('');
        })
        .catch(error => {
@@ -61,7 +61,7 @@ const Register = () => {
         singInGoogle()
         .then(result=>{
            history.push(redirectUrl);
-
+           hanldeUserInfoRegister(result.user.email)
            setError('');
         })
         .catch(error => {

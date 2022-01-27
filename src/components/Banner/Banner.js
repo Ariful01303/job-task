@@ -1,13 +1,14 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import './Banner.css'
 
 const Banner = () => {
     return (
-        <Carousel>
+        <Carousel className='pt-1'>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src="holder.js/800x400?text=First slide&bg=373940"
+      className="d-block w-100 long"
+      src="https://lakshmisharath.com/wp-content/uploads/2017/02/Travel-Blogger-1024x682.jpg"
       alt="First slide"
     />
     <Carousel.Caption>
@@ -17,8 +18,8 @@ const Banner = () => {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src="holder.js/800x400?text=Second slide&bg=282c34"
+      className="d-block w-100 long"
+      src="https://blog.continentalcurrency.ca/wp-content/uploads/2020/01/solo-female-travel-blogger-922x615.jpg"
       alt="Second slide"
     />
 
@@ -29,8 +30,8 @@ const Banner = () => {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src="holder.js/800x400?text=Third slide&bg=20232a"
+      className="d-block w-100 long"
+      src="https://www.radioactivetalent.com/wp-content/uploads/2019/07/mesut-kaya-eOcyhe5-9sQ-unsplash-1-750x400@2x.jpg"
       alt="Third slide"
     />
 

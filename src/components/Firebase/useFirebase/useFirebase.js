@@ -57,15 +57,15 @@ import firebaseInit from "../firebaseinit";
       };
         
 
-      // const hanldeUserInfoRegister = (email) => {
-      //   fetch("https://fast-cliffs-41980.herokuapp.com/adminUserInfo", {
-      //     method: "POST",
-      //     headers: { "content-type": "application/json" },
-      //     body: JSON.stringify({ email }),
-      //   })
-      //     .then((res) => res.json())
-      //     .then((result) => console.log(result));
-      // };
+      const hanldeUserInfoRegister = (email) => {
+        fetch("http://localhost:5000/adminUserInfo", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ email }),
+        })
+          .then((res) => res.json())
+          .then((result) => console.log(result));
+      };
   
         return {
             user,
@@ -74,7 +74,7 @@ import firebaseInit from "../firebaseinit";
             loading,
             handleUserLogin,
             handleUserRegister,
-            // hanldeUserInfoRegister
+            hanldeUserInfoRegister
 
   
         }

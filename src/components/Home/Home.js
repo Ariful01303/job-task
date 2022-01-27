@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import AddAproduct from '../AddAproduct/AddAproduct';
+import { Spinner } from 'react-bootstrap';
 import Banner from '../Banner/Banner';
+import Blogs from '../Blogs/Blogs';
 import useAuth from '../Firebase/useFirebase/useAuth';
+import Typical from 'react-typical'
+
 import './Home.css'
 
 const Home = () => {
-    const {user,logOut}=useAuth()
+    const {loading}=useAuth()
     const [services,setServices]=useState([])
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
-    const size = 2;
+    const size = 10;
     useEffect(()=>{
         fetch(`http://localhost:5000/services?page=${page}&&size=${size}`)
         .then(res=>res.json())
@@ -20,18 +23,45 @@ const Home = () => {
         setPageCount(pageNumber);
     });
 }, [page]);
+  
+     
 
 
     return (
-        <div>
+       <div>
             <Banner></Banner>
-            <h1>This is home</h1>
+       <div className='container mt-5'>
+           
+       <h1  className="title" style={{color: ' black'}}>
+       
+       {""}
+       <Typical  
+       loop={Infinity}
+       steps={[
+
+           " Travelers experiences",
+           1000, 
+           "Share Your Own Exprience",
+           1000,
+       ]}
+       />
+   </h1>
+            {loading?<Spinner animation="border" variant="warning" /> :
+                
+                  
+                <div className="service-container" >
             {
-                services.map(serv=><div><h1>
-                    {serv.name}
-                    </h1></div>)
+                services.map(serv=><Blogs
+                key={serv._id}
+                service={serv}
+                
+                >
+
+                </Blogs>)
             }
+            </div>}
             <div>
+                
             <div className="pagination">
                         {
                             [...Array(pageCount).keys()]
@@ -44,12 +74,7 @@ const Home = () => {
                     </div>
    
   </div>
-            <AddAproduct></AddAproduct>
-            <button
-                  onClick={logOut}
-                  className="btn btn-warning m-2"
-                >Sign Out
-                </button>
+      </div>
         </div>
     );
 };

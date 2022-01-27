@@ -86,7 +86,8 @@ const Login = () => {
                   className="btn btn-primary m-auto">
                     <i class="fs-2 fas fa-sign-in-alt"></i></button>
 
-                 
+                    <Nav.Link as ={Link} to="/register">Are you new here</Nav.Link>
+
                   
                 </div>
               </div>
@@ -111,7 +112,6 @@ const Login = () => {
               <img className="w-100 ms-5 mt-5" src={user?.photoURL} alt=""/>:<img className="w-100" src="https://i.imgur.com/UNazHDu.png"alt=""/>}
             
             ;
-            <Nav.Link as ={Link} to="/register">Are you new here</Nav.Link>
           </div>
         </div>
       </div>
